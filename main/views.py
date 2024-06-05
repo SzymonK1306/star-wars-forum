@@ -26,7 +26,7 @@ def home(request):
         "num_users":num_users,
         "num_categories":num_categories,
         "last_post":last_post,
-        "title": "Futbol Club Barcelona forum app"
+        "title": "Gwiezdne wojny - forum"
     }
     return render(request, "forums.html", context)
 
@@ -58,7 +58,7 @@ def detail(request, slug):
 
 def posts(request, slug):
     category = get_object_or_404(Category, slug=slug)
-    posts = Post.objects.filter(approved=True, categories=category)
+    posts = Post.objects.filter(categories=category)
     paginator = Paginator(posts, 5)
     page = request.GET.get("page")
     try:
@@ -71,7 +71,7 @@ def posts(request, slug):
     context = {
         "posts":posts,
         "forum": category,
-        "title": "Futbol Club Barcelona"
+        "title": "Gwiezdne wojny"
     }
 
     return render(request, "posts.html", context)
@@ -107,7 +107,7 @@ def latest_posts(request):
     posts = Post.objects.all().filter(approved=True)[:10]
     context = {
         "posts":posts,
-        "title": "Futbol Club Barcelona: Ostatnie posty"
+        "title": "Gwiezdne wojny: Ostatnie posty"
     }
 
     return render(request, "latest-posts.html", context)

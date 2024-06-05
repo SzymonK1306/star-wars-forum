@@ -11,7 +11,7 @@
             <div class="table-head">
                 <div class="status">Status</div>
                 <div class="subjects">Tematy</div>
-                <div class="replies">Odpowiedzi/Odsłony</div>
+                <div class="replies">Komentarze</div>
                 <div class="last-reply">Ostatnia odpowiedź</div>
             </div>
 
@@ -24,7 +24,7 @@
                     <span>Rozpoczęte przez <b><a href="">{{post.user.fullname|title}}</a></b> .</span>
                 </div>
                 <div class="replies">
-                    {{post.num_comments}} komentarzy <br> {% get_hit_count for post %} odsłon
+                    Liczba komentarzy: {{post.num_comments}}
                 </div>
 
                 {% if post.last_reply %}

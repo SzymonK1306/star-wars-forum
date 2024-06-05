@@ -21,6 +21,9 @@
                     <li class="nav-item"><a href="{% url 'home' %}">Strona Główna</a></li>
                     {% if user.is_authenticated %}
                     <li class="nav-item"><a href="{% url 'logout' %}">Wyloguj</a></li>
+                       {% if user.is_staff %}
+                    <li class="nav-item"><a href="{% url 'admin:index' %}">Admin</a></li>
+                    {% endif %}
                     {% else %}
                     <li class="nav-item"><a href="{% url 'signup' %}">Zarejestruj się</a></li>
                     <li class="nav-item"><a href="{% url 'signin' %}">Zaloguj się</a></li>

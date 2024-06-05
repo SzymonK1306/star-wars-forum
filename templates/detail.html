@@ -13,16 +13,14 @@
             <!-- Oryginalny wątek -->
             <div class="head">
                 <div class="authors">Autor</div>
-                <div class="content">Temat: {{post.title}} (Przeczytany {% get_hit_count for post %} razy)</div>
+                <div class="content">Temat: {{post.title}}</div>
             </div>
 
             <div class="body">
                 <div class="authors">
-                    <div class="username"><a href="">{{post.user.fullname|title}}</a></div>
-                    <div>Rola</div>
+                    <div class="username">{{post.user.fullname|title}}</div>
                     <img src="{{post.user.profile_pic.url}}" alt="">
                     <div>Posty: <u>{{post.user.num_posts}}</u></div>
-                    <div>Punkty: <u>{{post.user.points}}</u></div>
                 </div>
                 <div class="content">
                     {{post.content|safe}}
@@ -60,11 +58,9 @@
         <div class="comments-container">
             <div class="body">
                 <div class="authors">
-                    <div class="username"><a href="">{{comment.user.fullname|title}}</a></div>
-                    <div>Rola</div>
+                    <div class="username">{{comment.user.fullname|title}}</div>
                     <img src="{{comment.user.profile_pic.url}}" alt="">
                     <div>Posty: <u>{{comment.user.num_posts}}</u></div>
-                    <div>Punkty: <u>{{comment.user.points}}</u></div>
                 </div>
                 <div class="content">
                     {{comment.content}}
