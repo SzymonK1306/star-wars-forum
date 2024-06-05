@@ -16,25 +16,20 @@
     <header>
         <!-- Sekcja paska nawigacyjnego -->
         <div class="navbar">
-            <nav class="navigation hide" id="navigation">
-                <span class="close-icon" id="close-icon" onclick="showIconBar()"><i class="fa fa-close"></i></span>
+            <nav class="navigation" id="navigation">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="{% url 'home' %}">Strona główna</a></li>
+                    <li class="nav-item"><a href="{% url 'home' %}">Strona Główna</a></li>
                     {% if user.is_authenticated %}
                     <li class="nav-item"><a href="{% url 'logout' %}">Wyloguj</a></li>
-                    {% if user.is_staff %}
-                    <li class="nav-item"><a href="{% url 'admin:index' %}">Admin</a></li>
-                    {% endif %}
                     {% else %}
                     <li class="nav-item"><a href="{% url 'signup' %}">Zarejestruj się</a></li>
                     <li class="nav-item"><a href="{% url 'signin' %}">Zaloguj się</a></li>
                     {% endif %}
                 </ul>
             </nav>
-            <a class="bar-icon" id="iconBar" onclick="hideIconBar()"><i class="fa fa-bars"></i></a>
-            <div class="brand">Futbol Club Barcelona</div>
+            <div class="brand">Gwiezdne Wojny</div>
             {% if user.is_authenticated %}
-            <div style="font-size:50px;font-weight:300px;margin-left:100px;"><a href="{% url 'create_post' %}">+</a></div>
+            <div style="font-size:50px; font-weight:300; margin-left:100px;"><a href="{% url 'create_post' %}">+</a></div>
             {% endif %}
         </div>
 
@@ -62,7 +57,7 @@
     {% endblock content %}
     <div style="margin-bottom: 150px;"></div>
     <footer>
-        <span>Paweł Okuński 184394</span>
+        <span>&copy;  Szymon Kryzel | Wszystkie prawa zastrzeżone</span>
     </footer>
     <script src="{% static 'main.js' %}"></script>
 </body>
