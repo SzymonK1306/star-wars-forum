@@ -22,7 +22,7 @@
                     <div class="subjects">
                         <a href="{{post.get_url}}">{{post.title}}</a>
                         <br>
-                        <span>Rozpoczęte przez <b><a href="">{{post.user.fullname|title}}</a></b> .</span>
+                        <span>Rozpoczęte przez <b>{{post.user.fullname|title}}</b> .</span>
                     </div>
                     <div class="replies">
                         Liczba komentarzy: {{post.num_comments}}
@@ -31,7 +31,7 @@
                     {% if post.last_reply %}
                     <div class="last-reply">
                         {{post.last_reply.date|date}}
-                        <br>Przez <b><a href="">{{post.last_reply.user.fullname|title}}</a></b>
+                        <br>Przez <b>{{post.last_reply.user.fullname|title}}</b>
                     </div>
                     {% else %}
                     <div class="last-reply">

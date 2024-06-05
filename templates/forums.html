@@ -19,11 +19,11 @@
                             <p>Opis: {{forum.description}} </p>
                         </div>
                         <div class="subforum-stats subforum-column center">
-                            <span>{{forum.num_posts}} Posty</span>
+                            <span>Liczba postów: {{forum.num_posts}}</span>
                         </div>
                         <div class="subforum-info subforum-column">
                             {% if forum.last_post %}
-                                <b><a href="{{forum.last_post.get_url}}">Ostatni post</a></b> napisany przez <a href="">{{forum.last_post.user.fullname|title}}</a>
+                                <b><a href="{{forum.last_post.get_url}}">Ostatni post</a></b> napisany przez {{forum.last_post.user.fullname|title}}
                                 <br>dnia <small>{{forum.last_post.date|date}}</small>
                             {% else %}
                                 <span>Brak postów w tej kategorii.</span>

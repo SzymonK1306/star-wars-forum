@@ -17,11 +17,11 @@
 
             {% for post in objects %}
             <div class="table-row">
-                <div class="status"><i class="fa fa-fire"></i></div>
+                <div class="status"><i class="fa fa-rocket"></i></div>
                 <div class="subjects">
                     <a href="{{post.get_url}}">{{post.title}}</a>
                     <br>
-                    <span>Rozpoczęte przez <b><a href="">{{post.user.fullname|title}}</a></b> .</span>
+                    <span>Rozpoczęte przez {{post.user.fullname|title}}.</span>
                 </div>
                 <div class="replies">
                     Liczba komentarzy: {{post.num_comments}}
@@ -35,7 +35,7 @@
                 {% else %}
                 <div class="last-reply">
                     {{post.date|date}}
-                    <br>Przez <b><a href="">{{post.user.fullname|title}}</a></b>
+                    <br>Przez <b>{{post.user.fullname|title}}</b>
                 </div>
                 {% endif %}
             </div>
